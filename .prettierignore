@@ -1,0 +1,4 @@
+# Generated files
+dist/
+coverage/
+package-lock.json

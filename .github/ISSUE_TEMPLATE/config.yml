@@ -1,0 +1,6 @@
+# Require one of the forms above; security issues go through private reporting instead.
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/lmtejada/projects-scaffold/security/advisories/new
+    about: Please report security issues privately, not as public issues.

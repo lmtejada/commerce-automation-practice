@@ -1,0 +1,28 @@
+{
+  // Base config used by the editor, ESLint and `npm run typecheck`.
+  // It covers src/ and the root *.config.ts files; emitting is done by tsconfig.build.json.
+  "compilerOptions": {
+    // Node 24 supports ES2024 natively, so nothing needs downleveling.
+    "target": "es2024",
+    "lib": ["es2024"],
+    // Node runs the compiled output, so TypeScript must follow Node's ESM rules:
+    // imports of project files need explicit `.js` extensions.
+    "module": "nodenext",
+    "types": ["node"],
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    // Type-only imports must use `import type`, so emitted JS matches the source 1:1.
+    "verbatimModuleSyntax": true,
+
+    // `#/x` is a Node subpath import (package.json "imports"): the "source" condition points
+    // at src/ for TypeScript, ESLint and tsx; plain `node` falls through to dist/.
+    "customConditions": ["source"],
+
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["src", "*.config.ts"]
+}

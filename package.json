@@ -1,0 +1,65 @@
+{
+  "name": "projects-scaffold",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strict, minimal TypeScript/Node.js starter: ESLint, Prettier, Husky, zod config, and hardened CI.",
+  "license": "ISC",
+  "author": "Laura Tejada",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "imports": {
+    "#/*": {
+      "source": "./src/*",
+      "default": "./dist/*"
+    }
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@types/node": "^24.19.2",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0"
+  },
+  "scripts": {
+    "dev": "tsx watch --conditions=source src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run build && npm audit --audit-level=high",
+    "prepare": "husky"
+  },
+  "allowScripts": {
+    "esbuild": false,
+    "unrs-resolver": false,
+    "fsevents": false
+  },
+  "lint-staged": {
+    "*.{ts,mts,cts,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,jsonc,md,yml,yaml}": "prettier --write"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
