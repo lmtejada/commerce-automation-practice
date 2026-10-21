@@ -1,7 +1,7 @@
 # 1. Record architecture decisions
 
 - **Status:** Accepted
-- **Date:** 2026-10-20
+- **Date:** 2026-10-21
 
 ## Context
 

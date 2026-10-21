@@ -91,7 +91,7 @@ Example of the target style:
 
 - No extra dependency, and nothing is rewritten at build time.
 - Imports start with `#/` instead of `@/`.
-- A custom `source` condition is needed so TypeScript, ESLint and tsx resolve to `src/`.
+- A custom `template-source` condition is needed so TypeScript, ESLint and tsx resolve to `src/`.
 ```
 
 ## 4. Replacing an older ADR

@@ -1,8 +1,8 @@
 {
-  "name": "projects-scaffold",
+  "name": "commerce-automation-practice",
   "version": "0.1.0",
   "private": true,
-  "description": "Strict, minimal TypeScript/Node.js starter: ESLint, Prettier, Husky, zod config, and hardened CI.",
+  "description": "AI agent harness that audits a mock beauty-commerce catalog for pricing and stock anomalies.",
   "license": "ISC",
   "author": "Laura Tejada",
   "type": "module",
@@ -11,11 +11,13 @@
   },
   "imports": {
     "#/*": {
-      "source": "./src/*",
+      "template-source": "./src/*",
       "default": "./dist/*"
     }
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.137",
+    "ai": "^6.0.312",
     "zod": "^4.6.7"
   },
   "devDependencies": {
@@ -34,7 +36,7 @@
     "typescript-eslint": "^8.72.0"
   },
   "scripts": {
-    "dev": "tsx watch --conditions=source src/index.ts",
+    "dev": "tsx watch --conditions=template-source src/index.ts",
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/index.js",
     "typecheck": "tsc",

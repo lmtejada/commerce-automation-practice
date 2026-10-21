@@ -24,7 +24,9 @@ export default defineConfig(
     settings: {
       // Resolves `#/*` and `.js` -> `.ts` imports the same way TypeScript does.
       "import-x/resolver-next": [
-        createTypeScriptImportResolver({ conditionNames: ["source", "types", "import", "node"] }),
+        createTypeScriptImportResolver({
+          conditionNames: ["template-source", "types", "import", "node"],
+        }),
       ],
     },
     rules: {

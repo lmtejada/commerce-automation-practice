@@ -17,9 +17,10 @@
     // Type-only imports must use `import type`, so emitted JS matches the source 1:1.
     "verbatimModuleSyntax": true,
 
-    // `#/x` is a Node subpath import (package.json "imports"): the "source" condition points
-    // at src/ for TypeScript, ESLint and tsx; plain `node` falls through to dist/.
-    "customConditions": ["source"],
+    // `#/x` is a Node subpath import (package.json "imports"): the "template-source" condition
+    // points at src/ for TypeScript, ESLint and tsx; plain `node` falls through to dist/.
+    // The name must be unique: some dependencies publish a plain "source" export to their .ts files.
+    "customConditions": ["template-source"],
 
     "skipLibCheck": true,
     "noEmit": true
