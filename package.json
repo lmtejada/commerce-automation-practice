@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/google": "^3.0.137",
+    "@ai-sdk/google": "^4.0.105",
     "ai": "^6.0.312",
     "zod": "^4.6.7"
   },
